@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>29th Monthversary</title>
+    <style>
+        body {
+            background-color: #222;
+            /* Warna latar belakang gelap */
+            color: #fff;
+            /* Warna teks putih */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .alert-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: #333;
+            /* Warna latar belakang alert */
+            border: 2px solid #ff80b3;
+            /* Warna garis pinggir */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            max-width: 80%;
+            margin: auto;
+        }
+
+        .love-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ff80b3;
+            /* Warna tombol */
+            border: none;
+            color: #222;
+            /* Warna teks tombol */
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .love-button:hover {
+            background: #e60073;
+            /* Warna tombol saat dihover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        var name = prompt("Input Nama");
+        var message = "";
+        if (name != null) {
+            message = `
+            Makasih yaa udah mau berjuang sampe saat ini,
+            Makasih juga udah mau sabar hadepin aku,
+            Maaf aku belom bisa jadi apa yang kamu harapin,
+            Jangan pernah berubah yaa,
+            Happy 29th Monthversary yaa Sayanggg
+            <br>
+            I Love U ❤️
+            <br>
+            Nihh buat kamu<br> 
+        `;
+        }
+        var alertMessage = "Hai " + name + " Sayangg!❤️ <br>\n\n" + message;
+        var alertDiv = document.createElement("div");
+        alertDiv.classList.add("alert-container"); // Menambahkan kelas CSS
+        alertDiv.innerHTML = alertMessage;
+        document.body.appendChild(alertDiv);
+
+        // Mendapatkan referensi ke tag audio
+        var audio = document.querySelector("audio");
+
+        // Memulai pemutaran audio saat halaman dimuat
+        window.addEventListener("load", function () {
+            audio.play();
+        });
+
+        // Skrip JavaScript lainnya
+        var loveButton = document.createElement("button");
+        loveButton.textContent = "Buka";
+        loveButton.classList.add("love-button"); // Menambahkan kelas CSS
+        loveButton.addEventListener("click", function () {
+            alertDiv.style.display = "none"; // Menutup alert
+            window.location.href = "flower.html"; // Mengarahkan ke halaman flower.html
+        });
+
+        alertDiv.appendChild(loveButton);
+    </script>
+
+</body>
+
+</html>
